@@ -1,0 +1,47 @@
+\documentclass[a4paper,titlepage,twoside]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{fullpage}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{authblk}
+\usepackage{parskip}
+\usepackage[cachedir=build/minted,section]{minted}
+
+\newminted{protobuf}{autogobble}
+
+\newcommand{\frontgate}{\textbf{frontg8}}
+
+\newcommand{\fgpsource}{../external/frontg8proto}
+\newcommand{\fglsource}{../external/frontg8lib}
+
+\title{frontg8}
+
+\author{Ueli Bosshard}
+\author{Felix Morgner}
+\author{Tobias Stauber}
+\affil{University of Applied Sciences Rapperswil HSR}
+\date{}
+
+\posttitle{%
+  \par\large{An opensource, closed-group, secure chat system}
+\vfill
+\includegraphics[width=0.65\linewidth]{images/logo}
+\end{center}
+\vfill
+}
+
+\begin{document}
+
+\maketitle
+
+\input{sections/abstract}
+
+\tableofcontents
+\newpage{}
+
+\inputminted{protobuf}{\fgpsource/base.proto}
+
+\end{document}
